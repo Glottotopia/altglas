@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Altglas Container Map</title>
+		<title>BBV Scout</title>
 		<link rel="stylesheet" href="./bower_components/leaflet/dist/leaflet.css" />
 		<link rel="stylesheet" href="styles/popup.css" />
 		<link rel="stylesheet" href="styles/filters.css" />
@@ -41,24 +41,23 @@
 		<script src="js/app.js"></script>
 
 		<script type="text/html" id="tooltip_tmpl">
-			<div class="description"><%= stadtplanadresse %></div>
 			<div class="title"><%= standort  %></div>
+			<div class="text"><%= text %></div> 
 			<ul class="containers">
-				<li class="container-brown <% if (braun === "") { %> hidden<% }%>">
-					<span><%= braun %></span>
+				<li class="container-brown <% if (linke === "") { %> hidden<% }%>">
+					<span> Linke</span>
 				</li>
-				<li class="container-green <% if (gruen === "") { %> hidden<% }%>">
-					<span><%= gruen %></span>
+				<li class="container-green <% if (gruene === "") { %> hidden<% }%>">
+					<span> Grüne</span>
 				</li>
-				<li class="container-white <% if (weiss === "") { %> hidden<% }%>">
-					<span><%= weiss %></span>
+				<li class="container-white <% if (piraten === "") { %> hidden<% }%>">
+					<span>Piraten </span>
 				</li>
-				<li class="container-colored <% if (bunt === "") { %> hidden<% }%>">
-					<span><%= bunt %></span>
+				<li class="container-colored <% if (spd === "") { %> hidden<% }%>">
+					<span>SPD</span>
 				</li>
-			</ul>
-			<div class="supplier">Aufsteller: <%= aufsteller %></div>
-			<div class="bezirk">Bezirk: <%= bezirk %></div>
+			</ul> 
+			<div class="description"><%= stadtplanadresse %></div>
 		</script>
 
 	</head>
@@ -69,15 +68,15 @@
 			<a href="https://github.com/k-nut/altglas" title="Über das Projekt ...">?</a>
 		</div>
 		<div id="filter" class="filters">
-			<h2>Altglas Container in Berlin - zur Zeit nur Charlottenburg Wilmersdorf</h2>
-<p>Noch sind leider nur die Daten für Charlottenburg Wilmersdorf freigegeben. Wenn du selbst Daten anbietest kannst du sie gerne per Pull-Request hinzufügen oder dich per Mail melden. <a href="mailto:altglas@k-nut.eu">altglas@k-nut.eu</a> </p>
-			<p>Hier kannst du einschränken, welche frei zugänglichen Altglascontainer angezeigt werden.</p>
+			<h2>BVV-Drucksachen in Berlin</h2>
+<!-- <p>Noch sind leider nur die Daten für Charlottenburg Wilmersdorf freigegeben. Wenn du selbst Daten anbietest kannst du sie gerne per Pull-Request hinzufügen oder dich per Mail melden. <a href="mailto:altglas@k-nut.eu">altglas@k-nut.eu</a> </p> -->
+			<p>Hier kannst du einschränken, welche Drucksachen angezeigt werden.</p>
 			<div class="filter-controls">
-				<input type="checkbox" id="brown" /> <label for="brown"> Braunglas </label>
-				<input type="checkbox" id="white" /> <label for="white"> Weißglas </label>
-				<input type="checkbox" id="green" /> <label for="green"> Grünglas </label>
-				<input type="checkbox" id="colored"/> <label for="colored"> Buntglas </label>
-				PLZ: <select id="plz" >
+				<input type="checkbox" id="linke" /> <label for="linke"> Linke </label>
+				<input type="checkbox" id="piraten" /> <label for="piraten"> Piraten </label>
+				<input type="checkbox" id="gruene" /> <label for="gruene"> Grüne </label>
+				<input type="checkbox" id="spd"/> <label for="spd"> SPD </label>
+<!--				PLZ: <select id="plz" >
 					<option value="-1">-----</option>
 					<option value="10585">10585</option>
 					<option value="10587">10587</option>
@@ -106,12 +105,12 @@
 					<option value="14195">14195</option>
 					<option value="14197">14197</option>
 					<option value="14199">14199</option>
-				</select>
-				Aufsteller: <select id="supplier">
+				</select>-->
+<!--				Aufsteller: <select id="supplier">
 					<option value="">------</option>
 					<option value="Karl Meyer">Karl Meyer</option>
 					<option value="Berlin Recycling">Berlin Recycling</option>
-				</select>
+				</select>-->
 				Bezirk: <select id="bezirk">
 					<option value="">------</option>
 					<option value="CW">Charlottenburg-Wilmersdorf</option>

@@ -34,28 +34,28 @@ $(document).ready(function() {
   });
 
   function filterPoints(){
-    var filterBrown = $("#brown").prop("checked");
-    var filterWhite = $("#white").prop("checked");
-    var filterGreen = $("#green").prop("checked");
-    var filterColored = $("#colored").prop("checked");
+    var filterBrown = $("#linke").prop("checked");
+    var filterWhite = $("#piraten").prop("checked");
+    var filterGreen = $("#gruene").prop("checked");
+    var filterColored = $("#spd").prop("checked");
     var colorFilters = {
-      "braun": filterBrown,
-      "weiss": filterWhite,
-      "gruen": filterGreen,
-      "bunt": filterColored
+      "linke": filterBrown,
+      "piraten": filterWhite,
+      "gruene": filterGreen,
+      "spd": filterColored
     };
-    var filterPlz = $("#plz").val();
-    var filterSupplier = $("#supplier").val();
+//     var filterPlz = $("#plz").val();
+//     var filterSupplier = $("#supplier").val();
     var filterBezirk = $("#bezirk").val();
     var filterTyp = $("#typ").val();
 
 
     var filteredContainers = containers.features;
-    if (filterPlz !== "-1"){
-      filteredContainers = _.filter(filteredContainers, function(container){
-        return container.properties.plz === filterPlz;
-      });
-    }
+//     if (filterPlz !== "-1"){
+//       filteredContainers = _.filter(filteredContainers, function(container){
+//         return container.properties.plz === filterPlz;
+//       });
+//     }
 
     filteredContainers = _.filter(filteredContainers, function(container) {
       for (var color in colorFilters){
@@ -66,11 +66,11 @@ $(document).ready(function() {
       return true;
     });
 
-    if (filterSupplier !== ""){
-      filteredContainers = _.filter(filteredContainers, function(container) {
-        return container.properties.aufsteller === filterSupplier;
-      });
-    }
+//     if (filterSupplier !== ""){
+//       filteredContainers = _.filter(filteredContainers, function(container) {
+//         return container.properties.aufsteller === filterSupplier;
+//       });
+//     }
 
 
     if (filterBezirk !== ""){
