@@ -46,6 +46,8 @@ $(document).ready(function() {
     };
     var filterPlz = $("#plz").val();
     var filterSupplier = $("#supplier").val();
+    var filterBezirk = $("#bezirk").val();
+    var filterTyp = $("#typ").val();
 
 
     var filteredContainers = containers.features;
@@ -67,6 +69,19 @@ $(document).ready(function() {
     if (filterSupplier !== ""){
       filteredContainers = _.filter(filteredContainers, function(container) {
         return container.properties.aufsteller === filterSupplier;
+      });
+    }
+
+
+    if (filterBezirk !== ""){
+      filteredContainers = _.filter(filteredContainers, function(container) {
+        return container.properties.bezirk === filterBezirk;
+      });
+    }
+    
+    if (filterTyp !== ""){
+      filteredContainers = _.filter(filteredContainers, function(container) {
+        return container.properties.typ === filterTyp;
       });
     }
 
